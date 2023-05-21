@@ -1,5 +1,14 @@
 {
-  "artists": [
+  "artdata": [
+    {
+      "id": "1",
+      "date": 1888,
+      "isHighlight": false,
+      "image": "https://images.metmuseum.org/CRDImages/ep/original/DT1494.jpg",
+      "objectName": "oleanders",
+      "title": "Oleanders",
+      "name": "Vincent van Gogh"
+    },
     {
       "id": "2",
       "date": 1890,
@@ -7,8 +16,7 @@
       "image": "https://images.metmuseum.org/CRDImages/ep/original/DP346474.jpg",
       "objectName": "Irises",
       "title": "Irises",
-      "name": "Vincent van Gogh",
-      "likes": 6
+      "name": "Vincent van Gogh"
     },
     {
       "id": "3",
@@ -17,8 +25,7 @@
       "image": "https://images.metmuseum.org/CRDImages/ep/original/DT1502_cropped2.jpg",
       "objectName": "Self Portrait with straw hat",
       "title": "Self Portrait with straw hat",
-      "name": "Vincent van Gogh",
-      "likes": 5
+      "name": "Vincent van Gogh"
     },
     {
       "id": "4",
@@ -27,8 +34,7 @@
       "image": "https://images.metmuseum.org/CRDImages/ep/original/DT1947.jpg",
       "objectName": "Shoes",
       "title": "Shoes",
-      "name": "Vincent van Gogh",
-      "likes": 8
+      "name": "Vincent van Gogh"
     },
     {
       "id": "5",
@@ -37,18 +43,25 @@
       "image": "https://images.metmuseum.org/CRDImages/ep/original/DT1567.jpg",
       "objectName": "Wheat Field",
       "title": "Wheat Field with Cypresses",
-      "name": "Vincent van Gogh",
-      "likes": 8
+      "name": "Vincent van Gogh"
     },
     {
-      "id": "6",
+      "is": "6",
       "date": 1889,
       "isHighlight": false,
       "image": "https://images.metmuseum.org/CRDImages/ep/original/DP130999.jpg",
       "objectName": "Cypresses",
       "title": "Cypresses",
-      "name": " Vincent van Gogh",
-      "likes": 8
+      "name": " Vincent van Gogh"
+    },
+    {
+      "id": "7",
+      "date": 1874,
+      "isHighlight": false,
+      "image": "https://images.metmuseum.org/CRDImages/ep/original/DT1565.jpg",
+      "objectName": "The Rehearsal of the Ballet Onstage",
+      "title": "The Rehearsal of the Ballet Onstage",
+      "name": "Edgar Degas"
     },
     {
       "id": "8",
@@ -57,18 +70,16 @@
       "image": "https://images.metmuseum.org/CRDImages/ep/original/DP-20101-001.jpg",
       "objectName": "The Dance Class",
       "title": "The Dance Class",
-      "name": "Edgar Degas",
-      "likes": 8
+      "name": "Edgar Degas"
     },
     {
       "id": "9",
       "date": 1890,
       "isHighlight": false,
-      "image": "https://images.metmuseum.org/CRDImages/ep/original/77I_053R2M.jpg",
+      "image": "https://images.metmuseum.org/CRDImages/ep/original/DP-14936-033.jpg",
       "objectName": "Dancers, Pink and Green",
       "title": "Dancers, Pink and Green",
-      "name": "Edgar Degas",
-      "likes": 8
+      "name": "Edgar Degas"
     },
     {
       "id": "10",
@@ -77,38 +88,34 @@
       "image": "https://images.metmuseum.org/CRDImages/ep/original/DP146479.jpg",
       "objectName": "Man in a Turban",
       "title": "Man in a Turban",
-      "name": "Rembrandt van Rijn",
-      "likes": 8
+      "name": "Rembrandt van Rijn"
     },
     {
       "id": "11",
       "date": 1650,
       "isHighlight": false,
-      "image": "https://images.metmuseum.org/CRDImages/ep/original/DP120785.jpg",
+      "image": "https://images.metmuseum.org/CRDImages/ep/original/DP145920.jpg",
       "objectName": "Hendrickje Stoffels",
       "title": "Hendrickje Stoffels",
-      "name": "Rembrandt van Rijn",
-      "likes": 8
+      "name": "Rembrandt van Rijn"
     },
     {
       "id": "12",
       "date": 1630,
       "isHighlight": false,
-      "image": "https://images.metmuseum.org/CRDImages/ep/original/DP-16323-001.jpg",
+      "image": "https://images.metmuseum.org/CRDImages/ep/original/DP145931.jpg",
       "objectName": "Rembrandt as a Young Man",
       "title": "Rembrandt as a Young Man",
-      "name": "Rembrandt van Rijn",
-      "likes": 8
+      "name": "Rembrandt van Rijn"
     },
     {
       "id": "13",
       "date": 1662,
       "isHighlight": false,
-      "image": "https://images.metmuseum.org/CRDImages/ep/original/DP-16323-001.jpg",
+      "image": "https://images.metmuseum.org/CRDImages/ep/original/DP353257.jpg",
       "objectName": "Young Woman with a Water Pitcher",
       "title": "Young Woman with a Water Pitcher",
-      "name": "Johannes Vermeer ",
-      "likes": 8
+      "name": "Johannes Vermeer "
     },
     {
       "id": "14",
@@ -117,8 +124,7 @@
       "image": "https://images.metmuseum.org/CRDImages/ep/original/DP354965.jpg",
       "objectName": "Young Woman with a Lute",
       "title": "Young Woman with a Lute",
-      "name": "Johannes Vermeer",
-      "likes": 8
+      "name": "Johannes Vermeer"
     },
     {
       "id": "15",
@@ -127,8 +133,7 @@
       "image": "https://images.metmuseum.org/CRDImages/ep/original/DP131000.jpg",
       "objectName": "Race Horses",
       "title": "Race Horses",
-      "name": "Edgar Degas",
-      "likes": 8
+      "name": "Edgar Degas"
     }
   ]
 }

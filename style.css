@@ -29,21 +29,21 @@ header {
   color: antiquewhite;
 }
 
-#artist-guild {
+#artist-menu {
   display: flex;
   overflow-x: auto;
   margin: 1rem 0;
   max-width: calc(100vw - 2rem);
 }
 
-#artist-guild img {
+#artist-menu img {
   flex: 0 1 auto;
   height: 150px;
   margin-right: 0.5rem;
   cursor: pointer;
 }
 
-#artist-guild img:last-child {
+#artist-menu img:last-child {
   margin-right: 0;
 }
 

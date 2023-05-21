@@ -1,64 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-    <script src="main.js" defer></script>
+    <title>Art at Met</title>
+  <script src="main.js"defer></script>
     <link rel="stylesheet" href="style.css">
 
-    <title>Artists At the Met</title>
+
 </head>
-
 <body>
-    <header>
-        <h3>Artist at The Met</h3>
-    </header>
-
-    <!-- Artist Menu -->
-    <div id="Artist-guild">
-        <!-- Artist Images Here -->
-    </div>
-
-
-    <!-- Artist Details -->
-    <div id="Artist-detail">
-        <img class="detail-image" src="" alt="Insert Image Here" />
-        <h2 class="detail-name">Artist</h2>
-    <h3 class=" detail-date">Artist</h3>
-    </div>
-
-    <h3>Title:</h3>
-     <p>
-        <span id='detail-title'>Insert</span> 
-    </p>
-    <h3>Object Name:</h3>
-    <p id='detail-object-name'>
-    New Object Name
-    </p>
-
-    <!-- New Artist Form -->
-    <form id="new-artist">
-        <h4>New Artist</h4>
-        <input type="text" name="image" id="new-image" />
-        <label for="image">Image: </label>
-        <label for="name">Name: </label>
-        <input type="text" name="name" id="new-name" />
-        <label for="title">Title: </label>
-        <input type="text" name="title" id="new-title" />
-        <label for="image">Image: </label>
-        <input type="text" name="image" id="new-image" />
-        <label for="date">Date: </label>
-        <input type="number" name="date" id="new-date" />
-        <label for="new-object-name">Object Name: </label>
-        <textarea name="new-object-name" id="new-object-name"></textarea>
-        <input type="submit" value="Paint" />
+  <!-- <button id="enter">Enter</button> -->
+  <header>
+    <h3>Artists at the Met</h3>
+  </header>
+    <form> 
+      <input "text" placeholder="Search">
+      <input type="submit">
     </form>
+<!-- <img src="" alt="Museum Banner"> -->
+<div id ="artist-menu">
 
+</div>
+  
+<div id="artist-detail">
+  <img id="detail-image" src="https://images.metmuseum.org/CRDImages/ep/original/DP145931.jpg" alt="Insert Name Here" />
+  <h2 id="detail-name"">Insert Name Here</h2>
+
+</div>
+
+<h3>Id:</h3>
+<p>
+  <span id='detail-id'>Insert id here</span>
+</p>
+<h3>Title:</h3>
+<p id='detail-title'>
+  Insert title here
+</p>
+
+
+<form id="new-artist">
+  <h4>Add New Artist</h4>
+  <label for="name">Name: </label>
+  <input type="text" name="name" id="new-name" />
+  <label for="image">Image: </label>
+  <input type="text" name="image" id="new-image" />
+  <label for="id">Id: </label>
+  <input type="number" name="id" id="new-id" />
+  <label for="new-title">Title: </label>
+  <input type="text" name="title" id="new-title"/>
+  <textarea name="new-title" id="new-title"></textarea>
+  <input type="submit" value="Create" />
+</form>
 
 </body>
-
 </html>

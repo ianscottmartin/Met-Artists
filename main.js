@@ -1,47 +1,58 @@
-document.addEventListener("DOMContentLoaded", () => {
+console.log("running scripts")
+
+document.addEventListener('DOMContentLoaded', () => {
     displayArtists();
     addSubmitListener();
 
 })
 
-// fetch artists
+function displayArtists() {
+    fetch("http://localhost:3000/artdata")
+        .then(res => res.json())
+        .then(artists => {
+            artists.forEach(artist => renderOneArtist(artist))
+            // console.log(artists)
+            showArtistDetails(artists[0])
+        });
+}
 
-fetch("http://localhost:3000/artists")
-    .then(res => res.json())
-    .then(artistsData => {
-        // artists.forEach(artist => renderOneArtist(artist))
-        ArtistsDisplay(artistsData),
-            showCaseArtist(artistsData[0]),
-            addNewArtist()
-    })
+function addSubmitListener() {
+    const artistForm = document.getElementById("new-artist");
 
-const ArtistsDisplayNav = document.querySelector("#artists-guild")
-
-const artistName = document.querySelector(".name")
-const artistDate = document.querySelector(".date")
-const artistImage = document.querySelector(".detail-image")
-const artistObjectName = document.querySelector("#object-name")
-const artistTitle = document.querySelector("#title")
-
-
-function ArtistsDisplay(artists) {
-    artists.forEach(artist => {
-        const eachArtist = document.createElement('img')
-        eachArtist.src = artist.image
-        ArtistsDisplayNav.appendChild(eachArtist)
-        eachArtist.addEventListener("click", event => {
-            showCaseArtist(artist)
-        })
-        eachArtist.addEventListener('mouseover', event => {
-            addGlow(event, eachArtist);
-        })
+    artistForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        addNewArtist()
+        artistForm.reset();
     })
 }
-// artistImage.addEventListener('mousemove', event => {
-//     addGlow(event, artistImage);
+
+function renderOneArtist(artist) {
+    const artistImg = document.createElement('img');
+    const artistDiv = document.createElement('div');
+    const artistMenu = document.getElementById("artist-menu");
+
+    artistImg.src = artist.image;
 
 
-function addGlow(event, artistImage) {
+    artistMenu.append(artistDiv);
+    artistDiv.append(artistImg);
+
+    artistImg.addEventListener("mouseover", () => showArtistDetails(artist));
+
+
+
+
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "remove";
+    deleteButton.className = "delete-btn";
+    artistDiv.append(deleteButton);
+
+    deleteButton.addEventListener("click", () => deleteArtist(artist.id, artistDiv))
+
+
+}
+
+function addGlow(artists) {
     const colors = ['red', 'blue', 'green'];
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
 
@@ -58,50 +69,73 @@ function addGlow(event, artistImage) {
     }, 1000);
 }
 
-function addGlowToMainArtist(event, artistImage) {
-    const colors = ['red', 'blue', 'green'];
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
 
-    artistImage.style.borderColor = randomColor;
-    artistImage.style.borderWidth = '5px';
-    artistImage.style.borderStyle = 'solid';
-    artistImage.style.transition = 'border-color 0.5s, border-width 0.5s';
-}
+function showArtistDetails(artist) {
+    const detailImage = document.getElementById("detail-image");
+    const detailName = document.getElementById("detail-name");
+
+    const detailId = document.getElementById("detail-id");
+    const detailTitle = document.getElementById("detail-title");
 
 
-function showCaseArtist(artists) {
-    artistName.textContent = artists.name
-    artistDate.textContent = artists.date
-    artistImage.textContent = artists.image
-    artist.artistsObjectName = artists.objectname
-    artistTitle.textContent = artists.title
+    detailImage.src = artist.image;
+    detailName.textContent = artist.name;
 
-    artistImage.addEventListener('mouseover', event => {
-        addGlowToMainArtist(event, artistImage);
+    detailId.textContent = artist.id;
+    detailTitle.textContent = artist.title;
 
-    })
 
 }
-
-const newArtistName = document.querySelector("#new-name")
-const newArtistsDate = document.querySelector("#new-date")
-const newArtistsImage = document.querySelector("#new-detail-image")
-const newArtistsObjectName = document.querySelector("#new-object-name")
-const newArtistsTitle = document.querySelector("#new-title")
 
 function addNewArtist() {
-    const newArtistForm = document.querySelector("#new-artist")
-    newArtistForm.addEventListener('submit', event => {
-        event.preventDefault()
-        const newArtist = {
-            name: newArtistName.value,
-            date: newArtistsDate.value,
-            image: newArtistsImage.value,
-            artistObjectName: newArtistsObjectName.value,
-            title: newArtistName.value,
+    const newName = document.getElementById("new-name").value;
 
-        }
-        ArtistsDisplay([newArtist])
+    const newImage = document.getElementById("new-image").value;
+    const newId = document.getElementById("new-id").value;
+    const newTitle = document.getElementById("new-title").value;
+
+    const newArtist = {
+        "name": newName,
+
+        "image": newImage,
+        "id": newId,
+        "title": newTitle
+    }
+    fetch("http://localhost:3000/artdata", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newArtist)
     })
+
+    renderOneArtist(newArtist);
+
+
+    showArtistDetails(newArtist);
 }
 
+
+function deleteArtist(id, artistDiv) {
+
+    fetch(`http://localhost:3000/artists/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+
+
+    artistDiv.remove();
+
+
+    const placeholderInfo = {
+        "name": "Click an Artist!",
+
+        "image": "",
+        "id": "Select a artist to display!",
+        "title": "Same deal."
+    }
+
+    showArtistDetails(placeholderInfo);
+}
